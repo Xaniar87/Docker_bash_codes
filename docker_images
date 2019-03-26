@@ -1,0 +1,39 @@
+pull docker ubuntu:16.04 
+docker run -it <<imageID>>
+apt-get update
+apt-get upgrade
+apt-get install software-properties-common
+add-apt-repository ppa:deadsnakes/ppa
+apt-get update
+apt install python3.7
+python3.7 --version
+apt-get install build-essential libssl-dev libffi-dev python3-dev
+pip3 install virtualenv 
+pip install tensorflow-gpu==1.12.0
+
+
+docker pull Tensorflow/tensorflow:1.13.1-gpu-py3
+pip install matplotlib 1.12.0
+pip install pydicom 1.2.2
+pip install wget 3.2
+apt-get update
+apt-get upgrade
+apt-get install curl 7.47
+pip install sklearn
+pip install logging3-0.0.2
+
+
+docker commit "container-id" zaniar87/tensorflow-gpu-1.12.0-py3-pydicom:latest
+docker login
+
+
+
+
+docker ps -a #list all docker containers
+#get back to exited docker container
+docker start <<container>>
+docker attach <<container>>
+
+docker images #list all image
+docker run -it <<image-id>> 
+
